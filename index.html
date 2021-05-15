@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Expense calculator</h1>
+        <div id = "boxes">
+            <div id="megnevezes" class="big_box">
+                <div class="title">
+                    <h2>Item</h2>
+                </div>
+                <div class="myList">
+                    <ol id="megnevezes_list">
+                        
+                    </ol>
+                </div>
+                <div class="sum">
+                    <h2>Total</h2>
+                    <h2 id="sum_number_of_items"></h2>
+                </div>
+            </div>
+            <div id="koltseg" class="big_box">
+                <div class="title">
+                    <h2>Value</h2>
+                </div>
+                <div class="myList">
+                    <ol id="koltseg_list"></ol>
+                </div>
+                <div class="sum">
+                    <h2>Total</h2>
+                    <h2 id="sum_of_items_cost"></h2>
+                </div>
+            </div>
+            <div id="kezelofelulet" class="big_box">
+                <div class="title">
+                    <h2>User interface</h2>
+                </div>
+                <div class="myList">
+                    <ul>
+                        <li>
+                            <h3>Megnevezés</h3>
+                            <input id="tetel_neve" type="text">
+                        </li>
+                        <li>
+                            <h3>Tétel ára</h3>
+                            <input id="tetel_ara" type="number">
+                        </li>
+                        <li>
+                            <h3>Tétel darabszáma</h3>
+                            <input id="tetel_db" type="number">
+                        </li>
+                        <li>
+                            <input id="tetle_mentes" value="Mentés" type="button" onclick="save()">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

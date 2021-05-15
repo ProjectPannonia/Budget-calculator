@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background: darkseagreen;
+}
+
+.wrapper{
+    width: 95vw;
+    height: 90vh;
+    background: chartreuse;
+    display: flex;
+    margin: 10px auto;
+    flex-direction: column;
+}
+.wrapper h1 {
+    text-align: center;
+    display: block;
+}
+#boxes {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px;
+    margin: 0 auto;
+}
+.big_box {
+    width: 30vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    color: greenyellow;
+    border: 1px solid black;
+    margin: 0px 3px;
+}
+.big_box ol {
+    color: darkblue;
+}
+.title {
+    color:darkblue;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px dotted darkblue;
+}
+.title h2 {
+    display: block;
+    text-align: center;
+}
+.myList {
+    font-size: 20px;
+    flex-grow: 1;
+    max-height: 500px;
+    overflow: auto;
+}
+.myList h3 {
+    color: royalblue;
+}
+.myList ul input {
+    width: 20vw;
+    height: 5vh;
+    font-size: 20px;
+
+}
+.sum {
+    height: 5vh;
+    border-top: 1px dotted red;
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+.sum h2 {
+    display: block;
+    text-align: center;
+    margin: 5px auto;
+}
+.myList ul:last-child {
+}
