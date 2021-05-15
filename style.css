@@ -68,11 +68,15 @@ body{
     color: white;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.sum:first-child {
+    align-self: flex-start;
 }
 .sum h2 {
     display: block;
     text-align: center;
-    margin: 5px auto;
 }
 .myList ul:last-child {
 }
