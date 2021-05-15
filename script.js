@@ -22,9 +22,10 @@ function save() {
     let itemName = interfaceElement.itemName.value;
     let itemPrice = interfaceElement.itemPrice.value;
     let itemQuantity = interfaceElement.itemQuantity.value;
-    
+
     if(isValidData(itemName, itemPrice, itemQuantity)) {
         addToList(itemName, itemPrice, itemQuantity);
+        clearFields();
     } else {
         alert('Invalid input data!');
     }
@@ -79,3 +80,8 @@ function isValidNumber(value) {
     return valid;
 }
 
+function clearFields() {
+    interfaceElement.itemName.value = "";
+    interfaceElement.itemPrice.value = "";
+    interfaceElement.itemQuantity.value = "";
+}
