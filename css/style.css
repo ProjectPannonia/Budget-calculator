@@ -3,16 +3,17 @@
 }
 
 body{
-    background: darkseagreen;
+    background: rgb(163, 185, 163);
 }
 
 .wrapper{
     width: 95vw;
     height: 90vh;
-    background: chartreuse;
+    background: rgb(230, 235, 226);
     display: flex;
     margin: 10px auto;
     flex-direction: column;
+    border-radius: 10px;
 }
 .wrapper h1 {
     text-align: center;
@@ -32,6 +33,7 @@ body{
     color: greenyellow;
     border: 1px solid black;
     margin: 0px 3px;
+    border-radius: 5px;
 }
 .big_box ol {
     color: darkblue;
@@ -56,6 +58,10 @@ body{
 .myList h3 {
     color: royalblue;
 }
+.myList ul {
+    width: 25vw;
+    margin: 10px auto
+}
 .myList ul input {
     width: 20vw;
     height: 5vh;
@@ -78,5 +84,6 @@ body{
     display: block;
     text-align: center;
 }
-.myList ul:last-child {
+#save_btn {
+    margin: 50px auto;
 }

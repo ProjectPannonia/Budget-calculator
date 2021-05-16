@@ -56,11 +56,6 @@ function refreshTotals(multipliedCostAndAmount) {
     dataContainers.elementCounter.innerHTML = ": " + numberOfElements + " db";
     dataContainers.sumOfCost.innerHTML = ": " + total.toString() + " Ft";
 }
-/*
-if(typeof desciption.val === 'undefined') {
-        alert('Invalid')
-    }
-*/
 
 function isValidData(itemNameValue, itemPriceValue, itemQuantityValue) {
     let validName = isNaN(parseInt(itemNameValue)) && (itemNameValue.length > 0);
@@ -84,4 +79,17 @@ function clearFields() {
     interfaceElement.itemName.value = "";
     interfaceElement.itemPrice.value = "";
     interfaceElement.itemQuantity.value = "";
+}
+
+class ItemsToSave{
+    constructor(itemName, ite) {
+
+    }
+}
+
+function saveToFile() {
+    let blob = new Blob(['test text'],
+                         {type: 'text/plain;charset=utf-8'});
+
+    saveAs(blob, "testfile1.txt");
 }

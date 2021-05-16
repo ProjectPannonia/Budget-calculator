@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -44,25 +44,29 @@
                 <div class="myList">
                     <ul>
                         <li>
-                            <h3>Megnevezés</h3>
+                            <h3>Item name</h3>
                             <input id="item_name" type="text">
                         </li>
                         <li>
-                            <h3>Tétel ára</h3>
+                            <h3>Item price</h3>
                             <input id="item_price" type="number">
                         </li>
                         <li>
-                            <h3>Tétel darabszáma</h3>
+                            <h3>Item quantity</h3>
                             <input id="item_quantity" type="number">
                         </li>
                         <li>
-                            <input value="Mentés" type="button" onclick="save()">
+                            <input id="save_btn" value="Mentés" type="button" onclick="save()">
+                        </li>
+                        <li>
+                            <input id="save_to_file" value="Save to file" type="button" onclick="saveToFile()">
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/FileSaver.js"></script>
 </body>
 </html>
