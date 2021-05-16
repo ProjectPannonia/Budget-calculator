@@ -68,7 +68,7 @@
                             <input id="item_quantity" type="number">
                         </li>
                         <li>
-                            <input id="save_btn" class="my_button" value="Mentés" type="button" onclick="save(this.id)">
+                            <input id="save_btn" class="my_button" value="Add" type="button" onclick="save(this.id)">
                         </li>
                         <li>
                             <input id="save_to_file" class="my_button" value="Save to file" type="button" onclick="saveToFile(this.id)">
