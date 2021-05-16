@@ -8,22 +8,28 @@ body{
 
 .wrapper{
     width: 95vw;
-    height: 90vh;
+    height: 95vh;
     background: rgb(230, 235, 226);
     display: flex;
-    margin: 10px auto;
+    margin: 2vh auto;
     flex-direction: column;
     border-radius: 10px;
 }
 .wrapper h1 {
     text-align: center;
     display: block;
+    background: rgb(105, 47, 240);
+    width: 93vw;
+    height: 10vh;
+    color:rgb(185, 185, 245);
+    margin: 2vh auto;
 }
 #boxes {
     display: flex;
     flex-direction: row;
     padding: 10px 10px;
     margin: 0 auto;
+    height: 80vh;
 }
 .big_box {
     width: 28vw;
@@ -42,21 +48,25 @@ body{
     width: 8vw;
 }
 .title {
-    color:darkblue;
+    color:rgb(185, 185, 245);
     font-weight: bold;
     display: flex;
     flex-direction: column;
     border-bottom: 1px dotted darkblue;
+    background: rgb(105, 47, 240);
 }
 .title h2 {
     display: block;
     text-align: center;
 }
 .myList {
-    font-size: 20px;
+    font-size: 1em;
     flex-grow: 1;
     max-height: 500px;
     overflow: auto;
+}
+.myList ol {
+    margin: 5px auto;
 }
 .myList h3 {
     color: royalblue;
@@ -72,13 +82,14 @@ body{
 
 }
 .sum {
-    height: 5vh;
+    height: 8vh;
     border-top: 1px dotted red;
     color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background: rgb(105, 47, 240);
 }
 .sum:first-child {
     align-self: flex-start;
@@ -88,5 +99,65 @@ body{
     text-align: center;
 }
 #save_btn {
-    margin: 50px auto;
+    margin: 10px auto 10px auto;
+}
+.my_button {
+    border-radius: 5px;
+}
+.my_button:hover {
+    background-color: rgb(109, 177, 42);
+    color:white;
+}
+.slide-bck-center {
+	-webkit-animation: slide-bck-center 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: slide-bck-center 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+ @-webkit-keyframes slide-bck-center {
+    0% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+    }
+    100% {
+      -webkit-transform: translateZ(-400px);
+              transform: translateZ(-400px);
+    }
+  }
+  @keyframes slide-bck-center {
+    0% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+    }
+    100% {
+      -webkit-transform: translateZ(-400px);
+              transform: translateZ(-400px);
+    }
+  }
+  
+@media only screen and (max-width : 1250px) {
+    #boxes {
+        padding: 0;
+    }
+    .sum {
+        flex-direction: row;
+        font-size: 1em;
+        height: 9vh;
+        margin-bottom: 0;
+    }
+    .sum h2 {
+        
+        font-size: 1.2em;
+    }
+    .title h2 {
+        font-size: 1em;
+    }
+}
+
+#quantity_list,#value_list {
+    list-style-type: none;
+}
+
+.wrapper > h1:first-of-type {
+    display: block;
+    margin:1vh auto;
+    padding: 2.5vh 0 2.5vh 0;
 }

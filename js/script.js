@@ -21,7 +21,8 @@ let totalCost = 0;
 let quantityCounter = 0;
 let numberOfElements = 0;
 
-function save() {
+function save(id) {
+    addClassToBtn(id);
     let itemName = interfaceElement.itemName.value;
     let itemPrice = interfaceElement.itemPrice.value;
     let itemQuantity = interfaceElement.itemQuantity.value;
@@ -60,7 +61,6 @@ function addElementToList(text,unit) {
     }
 
     let selectedList = document.getElementById(listSelector);
-
     let listItemNode = document.createElement("li");
     let textNode = document.createTextNode(text);
     
@@ -103,7 +103,8 @@ function clearFields() {
 
 
 
-function saveToFile() {
+function saveToFile(id) {
+    addClassToBtn(id);
     let item_names_list = getDataFromTable(document.getElementById('item_name_list'));
     let item_quantities_list = getDataFromTable(document.getElementById('quantity_list'));
     let values_list = getDataFromTable(document.getElementById('value_list'));
@@ -130,9 +131,16 @@ function getDataFromTable(listNode) {
     let itemNameList = listNode;
     let itemNameListChildren = itemNameList.childNodes;
     let tableValues = [];
+
     for(let value of itemNameListChildren.values()) {
         tableValues.push(value.innerHTML);
     }
-    console.log(tableValues);
+    
     return itemNameListChildren;
+}
+
+function addClassToBtn(id) {
+    let button = document.getElementById(id);
+    button.classList.add('slide-bck-center');
+    //setTimeout()
 }
