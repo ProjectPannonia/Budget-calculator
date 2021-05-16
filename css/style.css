@@ -1,6 +1,12 @@
 * {
     box-sizing: border-box;
 }
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(229, 226, 236);
+}
 
 body{
     background: rgb(163, 185, 163);
@@ -62,13 +68,17 @@ body{
     max-height: 600px;
     overflow: auto;
 }
+
+
 .myList ol {
     margin: 5px auto;
+    padding:0;
 }
 .myList ol li {
     display: block;
     text-align: center;
     padding-left: 1vw;
+    padding-right: 0;
 }
 .myList h3 {
     color: royalblue;
@@ -80,7 +90,7 @@ body{
 .myList ul input {
     width: 20vw;
     height: 5vh;
-    font-size: 20px;
+    font-size: 1em;
 
 }
 .sum {
@@ -106,7 +116,7 @@ body{
     border-radius: 5px;
 }
 .my_button:hover {
-    background-color: rgb(109, 177, 42);
+    background: rgb(105, 47, 240);
     color:white;
 }
 #quantity_list,#value_list {
@@ -141,13 +151,15 @@ body{
 .medium_purple_bg {
     background: rgb(105, 47, 240);
 }
+.pale_white {
+    color:rgb(185, 185, 245);
+}
+
+
+
 .slide-bck-center {
 	-webkit-animation: slide-bck-center 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 	        animation: slide-bck-center 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-}
-
-.pale_white {
-    color:rgb(185, 185, 245);
 }
  @-webkit-keyframes slide-bck-center {
     0% {
@@ -188,4 +200,83 @@ body{
         font-size: 1em;
     }
 }
+@media only screen and (max-width : 1000px) {
+    .big_box {
+        width: 24vw;
+    }
+    .sum {
+        height: 6vh;
+    }
+    .small_box {
+        width: 12vw;
+    }
+    .myList {
+        width: 25vw;
+    }
+    .myList ul {
+        margin: 1vh auto;
+        width: 25vw;
+    }
+    .myList ul li {
+        margin: 0 30px;
+    }
+    .myList ul input {
+        width: 18vw;
+    }
+    .myList ul {
+        padding: 0;
+    }
+}
+@media only screen and (max-width : 800px) {
+    body {
+        margin: 0;
+    }
+    .wrapper {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0;
+    }
+    .wrapper > h1:first-of-type {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    .wrapper h1 {
+        width: 100vw;
+    }
+    #boxes {
+        width: 100vw;
+        flex-direction: column;
+        margin: 0;
+        height: 100vh;
+    }
+    .big_box {
+        width: 100vw;
+        margin-bottom: 1vh;
+        height: 25vh;
+        flex-direction: row;
+        border-radius: 0;
+    }
+    .title {
+        width: 10vw;
+        justify-content: center;
+    }
+    .sum {
+        height: 25vh;
+        width: 11vw;
+        flex-direction: column;
+    }
+    .myList {
+        width: 100vw;
+        height: 25vh;
+        max-height: 30vh;
+    }
+    .footer {
+        width: 100vw;
+        border-radius: 0;
+    }
+}
+0
 
