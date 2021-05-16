@@ -18,16 +18,14 @@ body{
 .wrapper h1 {
     text-align: center;
     display: block;
-    background: rgb(105, 47, 240);
-    width: 93vw;
+    width: 95vw;
     height: 10vh;
-    color:rgb(185, 185, 245);
     margin: 2vh auto;
 }
 #boxes {
     display: flex;
     flex-direction: row;
-    padding: 10px 10px;
+    padding: 1vh 1vw;
     margin: 0 auto;
     height: 80vh;
 }
@@ -39,21 +37,20 @@ body{
     color: greenyellow;
     border: 1px solid black;
     margin: 0px 3px;
-    border-radius: 5px;
 }
 .big_box ol {
     color: darkblue;
+    font-size: 2em;
 }
 .small_box {
     width: 8vw;
 }
 .title {
-    color:rgb(185, 185, 245);
+
     font-weight: bold;
     display: flex;
     flex-direction: column;
     border-bottom: 1px dotted darkblue;
-    background: rgb(105, 47, 240);
 }
 .title h2 {
     display: block;
@@ -62,11 +59,16 @@ body{
 .myList {
     font-size: 1em;
     flex-grow: 1;
-    max-height: 500px;
+    max-height: 600px;
     overflow: auto;
 }
 .myList ol {
     margin: 5px auto;
+}
+.myList ol li {
+    display: block;
+    text-align: center;
+    padding-left: 1vw;
 }
 .myList h3 {
     color: royalblue;
@@ -89,7 +91,6 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: rgb(105, 47, 240);
 }
 .sum:first-child {
     align-self: flex-start;
@@ -108,9 +109,45 @@ body{
     background-color: rgb(109, 177, 42);
     color:white;
 }
+#quantity_list,#value_list {
+    list-style-type: none;
+}
+
+.wrapper > h1:first-of-type {
+    display: block;
+    padding: 2.5vh 0 2.5vh 0;
+    margin-top: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    
+}
+
+.footer {
+    width: 95vw;
+    height: 10vh;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.footer h2 {
+    display: block;
+    padding-left: 1vw;
+    margin: 10px 10px 10px 10px;
+}
+
+.small_border_radius {
+    border-radius: 5px;
+}
+.medium_purple_bg {
+    background: rgb(105, 47, 240);
+}
 .slide-bck-center {
 	-webkit-animation: slide-bck-center 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 	        animation: slide-bck-center 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+.pale_white {
+    color:rgb(185, 185, 245);
 }
  @-webkit-keyframes slide-bck-center {
     0% {
@@ -152,12 +189,3 @@ body{
     }
 }
 
-#quantity_list,#value_list {
-    list-style-type: none;
-}
-
-.wrapper > h1:first-of-type {
-    display: block;
-    margin:1vh auto;
-    padding: 2.5vh 0 2.5vh 0;
-}
