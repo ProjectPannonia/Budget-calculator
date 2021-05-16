@@ -6,16 +6,19 @@ class UserInterfaceElements {
     }
 }
 class DataContainerElements {
-    constructor(elementCounter, sumOfCost) {
+    constructor(elementCounter,quantityCounter , sumOfCost) {
         this.elementCounter = document.getElementById(elementCounter);
+        this.quantityCounter = document.getElementById(quantityCounter)
         this.sumOfCost = document.getElementById(sumOfCost);
     }
 }
 
-const interfaceElement = new UserInterfaceElements('item_name', 'item_price', 'item_quantity');
-const dataContainers = new DataContainerElements('sum_number_of_items', 'sum_of_items_cost');
 
-let total = 0;
+const interfaceElement = new UserInterfaceElements('item_name', 'item_price', 'item_quantity');
+const dataContainers = new DataContainerElements('sum_number_of_items', 'sum_number_of_quantity', 'sum_of_items_cost');
+
+let totalCost = 0;
+let quantityCounter = 0;
 let numberOfElements = 0;
 
 function save() {
@@ -36,13 +39,27 @@ function addToList(desciption,cost,amount) {
     let multipliedCostAndAmount = parseInt(cost) * parseInt(amount);
 
     addElementToList(desciption, 'db');
+    addElementToList(amount, 'adb')
     addElementToList( multipliedCostAndAmount + 'Ft');
-    refreshTotals(multipliedCostAndAmount);
+
+    refreshTotals(desciption,cost,amount);
 }
 
 function addElementToList(text,unit) {
-    let whichList = (unit === 'db' ? 'megnevezes_list' : 'koltseg_list');
-    let selectedList = document.getElementById(whichList);
+    let listSelector;
+
+    switch(unit) {
+        case 'db':
+            listSelector = 'item_name_list';
+            break;
+        case 'adb':
+            listSelector = 'quantity_list';
+            break;
+        default:
+            listSelector = 'value_list';
+    }
+
+    let selectedList = document.getElementById(listSelector);
 
     let listItemNode = document.createElement("li");
     let textNode = document.createTextNode(text);
@@ -50,11 +67,14 @@ function addElementToList(text,unit) {
     listItemNode.appendChild(textNode);
     selectedList.appendChild(listItemNode);
 }
-function refreshTotals(multipliedCostAndAmount) {
-    total += parseInt(multipliedCostAndAmount);
+function refreshTotals(desciption,cost,amount) {
+    totalCost += (parseInt(cost) * parseInt(amount));
+    quantityCounter++;
     numberOfElements++;
+
     dataContainers.elementCounter.innerHTML = ": " + numberOfElements + " db";
-    dataContainers.sumOfCost.innerHTML = ": " + total.toString() + " Ft";
+    dataContainers.quantityCounter.innerHTML = ": " + quantityCounter + " db";
+    dataContainers.sumOfCost.innerHTML = ": " + totalCost.toString() + " Ft";
 }
 
 function isValidData(itemNameValue, itemPriceValue, itemQuantityValue) {
@@ -81,15 +101,38 @@ function clearFields() {
     interfaceElement.itemQuantity.value = "";
 }
 
-class ItemsToSave{
-    constructor(itemName, ite) {
 
-    }
-}
 
 function saveToFile() {
-    let blob = new Blob(['test text'],
-                         {type: 'text/plain;charset=utf-8'});
+    let item_names_list = getDataFromTable(document.getElementById('item_name_list'));
+    let item_quantities_list = getDataFromTable(document.getElementById('quantity_list'));
+    let values_list = getDataFromTable(document.getElementById('value_list'));
+    
+    let blob = new Blob(
+        [createDataArray(item_names_list, item_quantities_list, values_list)],
+        {type: 'text/plain;charset=utf-8'}
+    );
 
-    saveAs(blob, "testfile1.txt");
+    saveAs(blob, "My_expense_data.txt");
+}
+function createDataArray(names_list, quantities_list, values_list) {
+    let line;
+    let result = [];
+
+    for(let index = 0; index < names_list.length; index++) {
+        line = (index) + ". " + names_list[index].innerHTML + " " + quantities_list[index].innerHTML + " " + values_list[index].innerHTML;
+        result.push(line);
+    }
+
+    return result;
+}
+function getDataFromTable(listNode) {
+    let itemNameList = listNode;
+    let itemNameListChildren = itemNameList.childNodes;
+    let tableValues = [];
+    for(let value of itemNameListChildren.values()) {
+        tableValues.push(value.innerHTML);
+    }
+    console.log(tableValues);
+    return itemNameListChildren;
 }
